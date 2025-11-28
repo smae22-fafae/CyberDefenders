@@ -27,7 +27,7 @@ if (-not $wingetCmd) {
         Repair-WinGetPackageManager
 
         # msstore is pointless/noisy in sandbox
-        try { winget source disable msstore | Out-Null } catch {}
+        try { winget source remove msstore | Out-Null } catch {}
     } else {
         # Regular Windows 10/11 with App Installer
         Add-AppxPackage -RegisterByFamilyName -MainPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe
